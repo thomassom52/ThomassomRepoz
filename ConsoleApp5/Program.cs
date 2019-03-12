@@ -10,21 +10,20 @@ namespace ConsoleApp5
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите квадратное уравнение вида ax^2+bx+c=d, где a,b,c,d - целые числа. Любой из коэффициентов может быть равен нулю " +
+            Console.WriteLine("Введите квадратное уравнение вида ax^2+bx+c=d, где a,b,c,d - рациональные числа. Любой из коэффициентов может быть равен нулю " +
                 " Уравнение может содержать n элементов как в левой, так и в правой части уравнения");
             string Eq = Console.ReadLine();
-            int coef = 1;
-            double a = 0, b = 0, c = 0;
-            int e = 0, d = 0, co = 0, a1 = 0, b1 = 0, a2 = 0, b2 = 0;
+            int coef = 1, RavenTrigger = 0;
+            double a = 0, b = 0, c = 0, e = 0, d = 0, a1 = 0, b1 = 0, a2 = 0, b2 = 0;            
             string digit = "0";
             for (int i = 0; i < Eq.Length; i++)
             {
 
-                if (Eq[i] == '+' && co != 1)
+                if (Eq[i] == '+' && RavenTrigger != 1)
                 {
                     if (digit != "0")
                     {
-                        e = e + coef * Convert.ToInt32(digit);
+                        e = e + coef * Convert.ToDouble(digit);
                         digit = "0";
                     }
                     if (Eq[i + 1] == 'x')
@@ -35,11 +34,11 @@ namespace ConsoleApp5
                     coef = 1;
 
                 }
-                if (Eq[i] == '-' && co != 1)
+                if (Eq[i] == '-' && RavenTrigger != 1)
                 {
                     if (digit != "0")
                     {
-                        e = e + coef * Convert.ToInt32(digit);
+                        e = e + coef * Convert.ToDouble(digit);
                         digit = "0";
                     }
                     if (Eq[i + 1] == 'x')
@@ -50,7 +49,10 @@ namespace ConsoleApp5
                     coef = -1;
 
                 }
-
+                if (Eq[i] == ',')
+                {
+                    digit = digit + Eq[i];
+                }
                 if (Eq[i] >= '0' && Eq[i] <= '9')
                 {
                     if (i == 0 && Eq[0] == '2')
@@ -70,7 +72,7 @@ namespace ConsoleApp5
                         digit = digit + Eq[i];
                     }
                 }
-                if (Eq[i] == 'x' && co != 1 && i != Eq.Length - 1)
+                if (Eq[i] == 'x' && RavenTrigger != 1 && i != Eq.Length - 1)
                 {
                     if (i == 0)
                     {
@@ -78,35 +80,35 @@ namespace ConsoleApp5
                     }
                     if (Eq[i + 1] == '^' && Eq[i + 2] == '2')
                     {
-                        a1 = a1 + coef * Convert.ToInt32(digit);
+                        a1 = a1 + coef * Convert.ToDouble(digit);
                         digit = "0";
                         coef = 1;
                     }
                     else
                     {
-                        b1 = b1 + coef * Convert.ToInt32(digit);
+                        b1 = b1 + coef * Convert.ToDouble(digit);
                         digit = "0";
                         coef = 1;
                     }
                 }
-                if (Eq[i] == '=' && co != 1)
+                if (Eq[i] == '=' && RavenTrigger != 1)
                 {
                     if (digit != "0")
                     {
-                        e = e + coef * Convert.ToInt32(digit);
+                        e = e + coef * Convert.ToDouble(digit);
 
                     }
                     digit = "0";
                     coef = 1;
-                    co = 1;
+                    RavenTrigger = 1;
                 }
-                if (co == 1)
+                if (RavenTrigger == 1)
                 {
                     if (Eq[i] == 'x')
                     {
                         if (i == Eq.Length - 1)
                         {
-                            b2 = b2 + coef * Convert.ToInt32(digit);
+                            b2 = b2 + coef * Convert.ToDouble(digit);
                             digit = "0";
                             coef = 1;
                         }
@@ -114,13 +116,13 @@ namespace ConsoleApp5
                         {
                             if (Eq[i + 1] == '^' && Eq[i + 2] == '2')
                             {
-                                a2 = a2 + coef * Convert.ToInt32(digit);
+                                a2 = a2 + coef * Convert.ToDouble(digit);
                                 digit = "0";
                                 coef = 1;
                             }
                             else
                             {
-                                b2 = b2 + coef * Convert.ToInt32(digit);
+                                b2 = b2 + coef * Convert.ToDouble(digit);
                                 digit = "0";
                                 coef = 1;
                             }
@@ -130,13 +132,13 @@ namespace ConsoleApp5
                     }
                 }
 
-                if (co == 1)
+                if (RavenTrigger == 1)
                 {
                     if (Eq[i] == '=')
                     {
                         if (digit != "0")
                         {
-                            d = d + coef * Convert.ToInt32(digit);
+                            d = d + coef * Convert.ToDouble(digit);
 
                         }
                         digit = "0";
@@ -150,7 +152,7 @@ namespace ConsoleApp5
                     {
                         if (digit != "0")
                         {
-                            d = d + coef * Convert.ToInt32(digit);
+                            d = d + coef * Convert.ToDouble(digit);
                             digit = "0";
                         }
                         if (Eq[i + 1] == 'x')
@@ -163,7 +165,7 @@ namespace ConsoleApp5
                     {
                         if (digit != "0")
                         {
-                            d = d + coef * Convert.ToInt32(digit);
+                            d = d + coef * Convert.ToDouble(digit);
                             digit = "0";
                         }
                         if (Eq[i + 1] == 'x')
@@ -176,7 +178,7 @@ namespace ConsoleApp5
                     {
                         if (digit != "0")
                         {
-                            d = d + coef * Convert.ToInt32(digit);
+                            d = d + coef * Convert.ToDouble(digit);
                             digit = "0";
                             coef = 1;
 
@@ -188,7 +190,10 @@ namespace ConsoleApp5
             }
             c = e - d;
             a = a1 - a2;
-            b = b1 - b2;                       
+            b = b1 - b2;
+            Console.WriteLine("a:" + a);
+            Console.WriteLine("b:" + b);
+            Console.WriteLine("c:" + c);
             double D;
             double x = 0;
             double y = 0;
@@ -217,7 +222,7 @@ namespace ConsoleApp5
                     Console.WriteLine("Нет корней");
 
                 }
-
+                Console.WriteLine("D:" + D);
             }
             if (a == 0 && b == 0)
             {

@@ -12,3 +12,10 @@ C:\Users\user\source\repos\ConsoleApp5\ThomassomRepo\ConsoleApp5\obj\Debug\Conso
 C:\Users\user\source\repos\ConsoleApp5\ThomassomRepo\ConsoleApp5\obj\Debug\ConsoleApp5.csproj.CoreCompileInputs.cache
 C:\Users\user\source\repos\ConsoleApp5\ThomassomRepo\ConsoleApp5\obj\Debug\ConsoleApp5.exe
 C:\Users\user\source\repos\ConsoleApp5\ThomassomRepo\ConsoleApp5\obj\Debug\ConsoleApp5.pdb
+C:\Users\user\source\repos\ThomassomRepoz\ConsoleApp5\bin\Debug\ConsoleApp5.exe.config
+C:\Users\user\source\repos\ThomassomRepoz\ConsoleApp5\bin\Debug\ConsoleApp5.exe
+C:\Users\user\source\repos\ThomassomRepoz\ConsoleApp5\bin\Debug\ConsoleApp5.pdb
+C:\Users\user\source\repos\ThomassomRepoz\ConsoleApp5\obj\Debug\ConsoleApp5.csprojAssemblyReference.cache
+C:\Users\user\source\repos\ThomassomRepoz\ConsoleApp5\obj\Debug\ConsoleApp5.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\ThomassomRepoz\ConsoleApp5\obj\Debug\ConsoleApp5.exe
+C:\Users\user\source\repos\ThomassomRepoz\ConsoleApp5\obj\Debug\ConsoleApp5.pdb
